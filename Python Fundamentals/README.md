@@ -6,6 +6,12 @@ b, String & variables:
 c, Functions:
 d, Conditional Statements:
 
+2, 2nd Commit: Loops (while and for), Data Structures (Lists, Sets and Dictionaries)
+a, Loops:
+b, Lists: like array in JavaScript
+c, Sets: like array but it's sorted and use different syntax
+d, Dictionaries: like Object in Javascript
+
 ---
 
 ## PYTHON FUNDAMENTALS: COMMIT HISTORY:
@@ -84,3 +90,66 @@ d, Conditional Statements:
 
             +, Invoke the function:
             describeWeather(90)
+
+2, 2nd Commit: Loops (while and for), Data Structures (Lists, Sets and Dictionaries)
+
+    a, Loops:
+        - While Loops Syntax:
+            i = 0
+            while i < 10:
+                print(i)
+                i = i + 1
+
+        - For Loops Syntax:
+
+            for z in range(10):
+                print(z)
+
+    b, Lists: like array in JavaScript
+
+        colors = ['yellow', 'blue', 'red']
+        colors
+            => this will display the array
+            should get: ['yellow', 'blue', 'red']
+
+        colors.append('green')
+        colors
+            => this will show the array: ['yellow', 'blue', 'red', 'green']
+
+        More List methods in this link:
+            https://www.w3schools.com/python/python_ref_list.asp
+
+    c, Sets: like array but it's sorted and use different syntax
+
+        days = {"Monday", "Tuesday", "Wednesday", "Monday", "Tuesday"}
+        days
+            => this will show: {"Wednesday", "Monday", "Tuesday"}
+                this is because the sets won't repeat an existing value
+                and the values are sorted
+
+        days.add("Thursday")
+        days
+            => this will show: {"Wednesday", "Monday", "Thursday", "Tuesday"}
+
+        More Set methods in this link:
+            https://www.w3schools.com/python/python_ref_set.asp
+
+    d, Dictionaries: like Object in Javascript
+
+        grades = {'Sam': 85, 'Beth': 92}
+        grades['Fred'] = 88
+        grades
+            => will show {'Sam': 85, 'Beth': 92, 'Fred': 88}
+
+        del grades['Fred']
+        grades
+            => will show {'Sam': 85, 'Beth': 92}
+
+        list(grades.keys())
+            => will show ['Sam', 'Beth']
+            Basically all the keys in your dictionary
+
+        - grades.keys() will return dict_keys(['Sam', 'Beth'])
+            => See video 10 from minutes 7 to understand more about this
+            grades.value() will return a list of values for this dictionary:
+                dict_values([85, 92])
