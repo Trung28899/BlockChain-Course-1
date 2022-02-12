@@ -1,16 +1,30 @@
 ## PYTHON FUNDAMENTALS: TABLE OF CONTENT:
 
 1, 1st Commit: Fundamentals, String, Variables, Functions & Conditional Statement:
+
 a, Interpreter fundaments:
+
 b, String & variables:
+
 c, Functions:
+
 d, Conditional Statements:
 
+---
+
 2, 2nd Commit: Loops (while and for), Data Structures (Lists, Sets and Dictionaries)
+
 a, Loops:
+
 b, Lists: like array in JavaScript
+
 c, Sets: like array but it's sorted and use different syntax
+
 d, Dictionaries: like Object in Javascript
+
+---
+
+3, 3rd Commit: Classes & Object Oriented Programming
 
 ---
 
@@ -91,6 +105,8 @@ d, Dictionaries: like Object in Javascript
             +, Invoke the function:
             describeWeather(90)
 
+---
+
 2, 2nd Commit: Loops (while and for), Data Structures (Lists, Sets and Dictionaries)
 
     a, Loops:
@@ -153,3 +169,36 @@ d, Dictionaries: like Object in Javascript
             => See video 10 from minutes 7 to understand more about this
             grades.value() will return a list of values for this dictionary:
                 dict_values([85, 92])
+
+---
+
+3, Classes and Object Oriented Programming:
+
+    a, Introduction:
+
+        - Object Oriented Programming (What is it ?):
+            +, A programming style
+            +, That Models code based off of real-world object and their interaction
+            => This is how we represent real-world object in code
+
+        - Classes (How Object Oriented Programming work ?):
+            +, To create object, we need object template. Classes are object templates
+            +, In another word, classes is a blue print of an object that lays out the attributes
+                that a specific object should have
+
+        - Object instances:
+            +, Based on classes, individuals objects can be created. These are called Object Instances
+            +, Object Instances has attributes that the classes defined
+            +, Instances can also have its own attributes
+
+        - Inheritances:
+            +, A new class can be created based on the template of a previous class
+            +, For example, you can create a class of Lion that has the base class of
+                Animal so that the class Lion can inherit the attributes of Animal
+            +, When we base a new class's attributes on an existing class, this is called
+                Inheritances
+
+    b, Syntaxes:
+
+        - Visit this link to see how classes, object oriented & inheritance work:
+            https://replit.com/@TrungTrnh/Python-Starter#main.py
