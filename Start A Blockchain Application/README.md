@@ -18,6 +18,11 @@
 - Genesist block (5th Commit):
   +, First block of the Blockchain
 
+- Static Method (6th Commit):
+  +, Much like class method, are methods that are bounds to a class rather than its object
+  +, They do not require a class instance creation. They are not dependent on
+  the state of the object
+
 ---
 
 ## PYTHON FUNDAMENTALS: COMMIT HISTORY:
@@ -59,3 +64,13 @@
 
     - Run the following command to see the result:
         +, $ python3 block.py
+
+---
+
+3, 6th Commit:
+
+    - Update static methods in block.py
+    - Refactor code in blockchain.py
+
+    => still the same code as 5th commit but just
+        refactor for better code presentation
