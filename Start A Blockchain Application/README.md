@@ -4,7 +4,7 @@
 
 ---
 
-## Fundamentals:
+## FUNDAMENTALS:
 
 - A block contains:
   +, timestamp
@@ -22,6 +22,29 @@
   +, Much like class method, are methods that are bounds to a class rather than its object
   +, They do not require a class instance creation. They are not dependent on
   the state of the object
+
+- Block hash (7th Commit):
+  +, Generated from the timestamp, given data and the last_hash
+
+- SHA-256 (7th Commit):
+  +, S: Secure, H: Hash, A: Algorithm
+  +, 256 represent the size of 256 bit for the hash value
+
+  +, Benefit of SHA-256:
+
+  -> Produces an unique value for unique input
+  -> A one-way function: you can only encrypt, you cannot decrypt it
+
+- Other Terms for cryptography (7th Commit):
+  +, ENCODING: The process of converting data into an alternate representation
+
+  +, CHARACTER ENCODING: Most often in programming, Character Encoding is used.
+  This means that string will be converted to a lower data type like a set of bytes
+
+  +, UTF-8 ENCODING: a method of encoding that convert each character in a string
+  to 8 bits byte (contains 0 and 1)
+
+  +, DECODING: The process of converting encoded data back to its original format
 
 ---
 
@@ -67,10 +90,26 @@
 
 ---
 
-3, 6th Commit:
+3, 6th Commit: Static method in python and Refactor code
 
     - Update static methods in block.py
     - Refactor code in blockchain.py
 
     => still the same code as 5th commit but just
         refactor for better code presentation
+
+---
+
+4, 7th Commit: Lambda Functions in Python, Hashing Algorithm Completed
+
+    - Lambda function in python:
+      +, See crypto_hash.py first comment
+
+    - Completed Hashing algorithm:
+      +, See crypto_hash.py
+
+    - Basic terms and fundamentals:
+      +, Block hash
+      +, SHA-256
+      +, UTF-8
+      +, Encoding, Decoding
