@@ -19,3 +19,13 @@ I. Course 1: Python, JS, & React | Build a Blockchain & Cryptocurrency
 
     - Section 1: Introduction
     - Section 2: Python Fundamentals
+    - Section 3: Start A Blockchain Application
+
+3, Files content:
+
+    - Python Fundamentals:
+        +, 1st Commit - 3rd Commit
+        +, Basic Syntax of Python
+
+    - Start A Blockchain Application:
+        +, 4rd Commit -
