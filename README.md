@@ -28,4 +28,6 @@ I. Course 1: Python, JS, & React | Build a Blockchain & Cryptocurrency
         +, Basic Syntax of Python
 
     - Start A Blockchain Application:
-        +, 4rd Commit -
+        +, 4rd Commit - 7th Commit
+        +, Block and Blockchain classes
+        +, Hashing Algorithm
