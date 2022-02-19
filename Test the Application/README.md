@@ -59,10 +59,16 @@ any developer can run this command and all the packages will be installed:
 
 **Run the tests**
 
-- Any file with prefix of test will be executed when you run the command
+    - Any file with prefix of test will be executed when you run the command
 
-- Make sure to activate the virtual environment
+    - Make sure to activate the virtual environment
 
 `$ python3 -m pytest backend/tests`
 
-- See file: ./"Test the Application"/backend/tests
+    - See file: ./"Test the Application"/backend/tests
+
+3, 10th Commit: Added more tests
+
+    - See folder: ./"Test the Application"/backend/tests
+
+Run: `$ python3 -m pytest backend/tests`

@@ -1,6 +1,14 @@
 import time
 from backend.utils.crypto_hash import crypto_hash
 
+# This is how we define a global variable
+GENESIS_DATA = {
+    "timestamp": 1, 
+    "last_hash": "genesis_last_hash", 
+    "hash": "genesis_hash", 
+    "data": []
+}
+
 class Block: 
     """
     Block: a unit of storage
@@ -40,7 +48,14 @@ class Block:
             Genesis block: the first block in a chain
         """
 
-        return Block(1, 'genesis_last_hash', 'genesis_hash', [])
+        # return Block(
+        #     timestamp = GENESIS_DATA['timestamp'], 
+        #     genesis_last_hash = GENESIS_DATA['genesis_last_hash'], 
+        #     genesis_hash = GENESIS_DATA['genesis_hash'], 
+        #     data = GENESIS_DATA['data']
+        # )
+        
+        return Block(**GENESIS_DATA)
 
 def main(): 
     genesis_block = Block.genesis()
