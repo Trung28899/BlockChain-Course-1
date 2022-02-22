@@ -61,7 +61,7 @@
 
     b, How to run python file:
         +, cd to the directory of the file
-        +, $ python3 filename.py
+        +, `$ python3 filename.py`
         (must use the default __repr__ methods in order
             for the presentation to be readable string)
 
@@ -86,7 +86,7 @@
     - See code in block.py to see how to mine a block and create a genesis block
 
     - Run the following command to see the result:
-        +, $ python3 block.py
+        +, `$ python3 block.py`
 
 ---
 

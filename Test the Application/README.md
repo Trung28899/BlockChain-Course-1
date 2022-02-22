@@ -2,6 +2,7 @@
 
 1, 8th Commit: Python file setup & Virtual environment
 2, 9th Commit: Test the application (Basic of how to run test in python)
+3, 10th Commit: Added more tests
 
 ---
 

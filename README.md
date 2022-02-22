@@ -1,4 +1,21 @@
-## Repository for Learning Blockchain development
+## QUICK COMMANDS:
+
+- Example command on how to run a python file.
+  Notice that there is no .py at the end
+
+`$ python3 -m backend.blockchain.block`
+
+- Another example of how to run a file:
+
+`$ python3 file.py`
+
+- How to run a test file:
+  Remember to install pytest before run this.
+  Go to README in Section 4: Test the application
+
+`$ python3 -m pytest backend/tests`
+
+## REPOSITORY FOR LEARNING BLOCKCHAIN DEVELOPMENT:
 
 I. Course 1: Python, JS, & React | Build a Blockchain & Cryptocurrency
 
@@ -18,16 +35,27 @@ I. Course 1: Python, JS, & React | Build a Blockchain & Cryptocurrency
 2, Content Table:
 
     - Section 1: Introduction
+
     - Section 2: Python Fundamentals
+
     - Section 3: Start A Blockchain Application
+
+    - Section 4: Test The Application
+
+    - Section 5: Proof Of Work
 
 3, Files content:
 
-    - Python Fundamentals:
+    - Section 2: Python Fundamentals:
         +, 1st Commit - 3rd Commit
         +, Basic Syntax of Python
 
-    - Start A Blockchain Application:
+    - Section 3: Start A Blockchain Application:
         +, 4rd Commit - 7th Commit
         +, Block and Blockchain classes
         +, Hashing Algorithm
+
+    - Section 4: Test The Application
+        +, 8th Commit - 10th Commit
+        +, How to do Unit Testing for Python
+        +, How to create and enter virtual environment
