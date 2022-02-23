@@ -1,6 +1,7 @@
 from backend.blockchain.block import Block, GENESIS_DATA
 from backend.config import MINE_RATE, SECONDS
 import time
+from backend.utils.hex_to_binary import hex_to_binary
 
 
 def test_mine_block(): 
@@ -16,7 +17,7 @@ def test_mine_block():
     # hash of the previous block
     assert block.last_hash == last_bock.hash
     # Test to see if the hash is valid Proof Of Work
-    assert block.hash[0:block.difficulty] == '0' * block.difficulty
+    assert hex_to_binary(block.hash)[0:block.difficulty] == '0' * block.difficulty
 
 def test_genesis(): 
     genesis = Block.genesis()

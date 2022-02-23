@@ -1,5 +1,6 @@
 import time
 from backend.utils.crypto_hash import crypto_hash
+from backend.utils.hex_to_binary import hex_to_binary
 from backend.config import MINE_RATE
 
 # This is how we define a global variable
@@ -62,7 +63,7 @@ class Block:
             so this loop won't stop until there are 3 zeros
             at the begining of the string
         """
-        while hash[0:difficulty] != '0' * difficulty: 
+        while hex_to_binary(hash)[0:difficulty] != '0' * difficulty: 
             nonce += 1
             timestamp = time.time_ns()
             difficulty = Block.adjust_difficulty(last_block, timestamp)

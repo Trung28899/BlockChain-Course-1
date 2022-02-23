@@ -29,7 +29,7 @@ I. Course 1: Python, JS, & React | Build a Blockchain & Cryptocurrency
 
     - Course Goals (According to the course):
     +, Learn Python
-    +, Build a blockchain & Crypto currency
+    +, Build a blockchain & Cryptocurrency
     +, Learn Front-end development with React.js
 
 2, Content Table:
@@ -60,5 +60,7 @@ I. Course 1: Python, JS, & React | Build a Blockchain & Cryptocurrency
         +, How to do Unit Testing for Python
         +, How to create and enter virtual environment
 
-Script to mine a bunch of block to see the average time that the system is mining
-the block
+    - Section 5: Proof Of Work
+        +, 11st Commit - 14th Commit
+        +, How to implement Proof Of Work
+        +, How to Implement dynamic difficulty in regards for fixed MINE RATE

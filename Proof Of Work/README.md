@@ -2,6 +2,8 @@
 
 1. 11st Commit: Difficulty and nonce value
 2. 12nd Commit: Implementing Dynamic Difficulty based on Fixed Mine Rate
+3. 13rd Commit: Average Work Script
+4. 14th Commit: Hex To Binary Conversion
 
 ---
 
@@ -12,6 +14,11 @@
 ---
 
 ## COMMANDS:
+
+`$ cd "Proof Of Work"`
+`$ python3 -m backend.blockchain.block`
+`$ python3 -m pytest backend/tests`
+`$ python3 -m backend.scripts.average_block_rate`
 
 ---
 
@@ -87,4 +94,23 @@
     `$ python3 -m backend.scripts.average_block_rate`
 
         - Note that the average time to add block won't be close to 4s
-        but the block are adjusting to have the MINE_RATE of 4s
+        but the block are adjusting to have the MINE_RATE of 4s.
+
+        Average time to add block will be about 2.8s
+        Next commit we will optimized to have the average time
+        to add block closer to the mine rate which is 4s
+
+4.  14th Commit: Hex To Binary Conversion
+
+        - In this commit we implement a hex to binary conversion function:
+            +, This helps complicate the algorithm so that the average time
+            to add block closer to the mine rate which is 4s
+
+        - See files:
+            +, backend/utils/hex_to_binary.py
+            +, backend/tests/utils/test_hex_to_binary.py for testing
+            +, backend/blockchain/block.py: See how hex_to_binary() is used
+            +, Run command down below to see result:
+
+    `$ python3 -m backend.scripts.average_block_rate`
+    `$ python3 -m pytest backend/tests`

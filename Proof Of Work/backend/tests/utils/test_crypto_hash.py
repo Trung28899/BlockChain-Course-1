@@ -1,5 +1,9 @@
 from backend.utils.crypto_hash import crypto_hash
 
+"""
+    Testing the function that hasing arguments to 
+    hex values
+"""
 def test_crypto_hash():
     # It should create the same hash with argument of different data types 
     # in any orders
