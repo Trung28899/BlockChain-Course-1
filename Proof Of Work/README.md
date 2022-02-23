@@ -1,6 +1,7 @@
 ## START THE BLOCKCHAIN APPLICATION: TABLE OF CONTENT:
 
-1, 11st Commit: Difficulty and nonce value
+1. 11st Commit: Difficulty and nonce value
+2. 12nd Commit: Implementing Dynamic Difficulty based on Fixed Mine Rate
 
 ---
 
@@ -36,3 +37,37 @@
     `$ python3 -m backend.blockchain.block`
 
 > See the output of the hash, difficulty and nonce
+
+2.  12nd Commit: Implementing Dynamic Difficulty based on Fixed Mine Rate
+
+        - This commit show how to difficulty can be changed based on Fixed Mine Rate:
+            +, Basically, the system compare the timestamp of the last block creation to
+                the new block that is created
+            +, If differences in timestamp larger than the Mine Rate > difficulty will
+                be decreased
+            +, If differences in timestamp lower than the Mine Rate > difficulty will
+                be increased
+
+
+        - Implementation:
+            +, backend/blockchain/block.py: See:
+
+                > adjust_difficulty(last_block, new_timestamp)
+
+                > mine_block(last_block, data)
+
+            +, Run this command to see output:
+
+    `$ python3 -m backend.blockchain.block`
+
+        - Test:
+            +, See how to test this dynamic difficulty system:
+            +, See files: backend/tests/blockchain/test_block.py:
+
+                test_quickly_mined_block()
+                test_slowly_mined_block()
+                test_mined_block_difficulty_limits_at_1()
+
+            +, Run this command to see output:
+
+    `$ python3 -m pytest backend/tests`

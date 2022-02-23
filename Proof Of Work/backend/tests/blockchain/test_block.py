@@ -1,4 +1,7 @@
 from backend.blockchain.block import Block, GENESIS_DATA
+from backend.config import MINE_RATE, SECONDS
+import time
+
 
 def test_mine_block(): 
     last_bock = Block.genesis()
@@ -29,3 +32,59 @@ def test_genesis():
     for key, value in GENESIS_DATA.items():
         # get attribute, same thing as above
         getattr(genesis, key) == value
+
+"""
+    Test to make sure that the difficulty for 
+    Proof Of Work increased based on MINE_RATE
+
+    The last_block and mined_block are mined very 
+    closely, mined_block is basically the last line
+    of code. 
+
+    Therefore, the difficulty should be raised by 1
+    > Expect difficulty to increase
+"""
+def test_quickly_mined_block(): 
+    last_block = Block.mine_block(Block.genesis(), "foo")
+    mined_block = Block.mine_block(last_block, "bar")
+
+    assert mined_block.difficulty == last_block.difficulty + 1
+
+"""
+    Test to make sure that the difficulty for 
+    Proof Of Work decreased based on MINE_RATE
+
+    Expect difficulty to decrease
+
+    time.sleep() take values in seconds
+"""
+def test_slowly_mined_block(): 
+
+    last_block = Block.mine_block(Block.genesis(), "foo")
+
+    time.sleep(MINE_RATE / SECONDS)
+
+    mined_block = Block.mine_block(last_block, "bar")
+
+    assert mined_block.difficulty == last_block.difficulty - 1
+
+"""
+    Test to make sure that the difficulty for 
+    Proof Of Work doesn't go to 0 no matter what
+"""
+def test_mined_block_difficulty_limits_at_1():
+    last_block = Block(
+        time.time_ns(), 
+        'test_last_hash', 
+        'test_hash', 
+        'test_data',
+        1, 
+        0
+    )
+
+    time.sleep(MINE_RATE / SECONDS)
+
+    mined_block = Block.mine_block(last_block, "bar")
+
+    assert mined_block.difficulty == 1
+
