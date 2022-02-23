@@ -71,3 +71,20 @@
             +, Run this command to see output:
 
     `$ python3 -m pytest backend/tests`
+
+3.  13rd Commit: Average Work Script
+
+        - This Commit is to see how does the Proof Of Work System work by
+            running a script that create 100 blocks and print out:
+
+            +, Difficulty
+            +, Time to mine new block
+            +, Average time to add blocks
+
+        - See code in: backend/scripts/average_block_rate.py
+            +, Run command:
+
+    `$ python3 -m backend.scripts.average_block_rate`
+
+        - Note that the average time to add block won't be close to 4s
+        but the block are adjusting to have the MINE_RATE of 4s

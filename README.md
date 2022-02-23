@@ -59,3 +59,6 @@ I. Course 1: Python, JS, & React | Build a Blockchain & Cryptocurrency
         +, 8th Commit - 10th Commit
         +, How to do Unit Testing for Python
         +, How to create and enter virtual environment
+
+Script to mine a bunch of block to see the average time that the system is mining
+the block
