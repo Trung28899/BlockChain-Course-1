@@ -2,12 +2,16 @@
 
 1. 15th Commit: Validating Blocks
 2. 16th Commit: Validating Chain
+3. 17th Commit: Chain Replacement
 
 ---
 
 ## FUNDAMENTALS:
 
 - See Handbook to understand the concept of Chain Validation & Replacement
+
+- In this section, we're preparing the Block and Blockchain classes to be
+  able for collaboration
 
 ---
 
@@ -40,4 +44,10 @@
      +, ./backend/blockchain/blockchain.py > method: is_valid_chain()
      +, ./backend/tests/blockchain/blockchain.py
 
-   - See how to raise exceptions and catch it with try and except
+3. 17th Commit: Chain Replacement
+
+   - Method to validate replace the whole chain of the blockchain
+
+   - See code:
+     +, ./backend/blockchain/replace_chain.py > method: is_valid_chain()
+     +, ./backend/tests/blockchain/blockchain.py

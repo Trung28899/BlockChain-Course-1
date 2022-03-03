@@ -64,3 +64,10 @@ I. Course 1: Python, JS, & React | Build a Blockchain & Cryptocurrency
         +, 11st Commit - 14th Commit
         +, How to implement Proof Of Work
         +, How to Implement dynamic difficulty in regards for fixed MINE RATE
+
+    - Section 6: Collaboration
+        +, 15th Commit - 17th Commit
+        +, How to validate Block
+        +, How to validate the whole Blockchain
+        +, How to replace the whole Blockchain
+        => Preparing the system for Collaboration
