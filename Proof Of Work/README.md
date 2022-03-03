@@ -1,4 +1,4 @@
-## START THE BLOCKCHAIN APPLICATION: TABLE OF CONTENT:
+## PROOF OF WORK: TABLE OF CONTENT:
 
 1. 11st Commit: Difficulty and nonce value
 2. 12nd Commit: Implementing Dynamic Difficulty based on Fixed Mine Rate

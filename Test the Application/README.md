@@ -1,4 +1,4 @@
-## START THE BLOCKCHAIN APPLICATION: TABLE OF CONTENT:
+## TESTING THE APPLICATION: TABLE OF CONTENT:
 
 1, 8th Commit: Python file setup & Virtual environment
 2, 9th Commit: Test the application (Basic of how to run test in python)
