@@ -70,4 +70,5 @@ I. Course 1: Python, JS, & React | Build a Blockchain & Cryptocurrency
         +, How to validate Block
         +, How to validate the whole Blockchain
         +, How to replace the whole Blockchain
+
         => Preparing the system for Collaboration
