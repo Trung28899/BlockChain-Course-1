@@ -91,12 +91,13 @@ def test_mined_block_difficulty_limits_at_1():
     assert mined_block.difficulty == 1
 
 """
-@pytest.fixture declare function that we can use
-in test method that we can reuse
+@pytest.fixture helps declare variable that we can re-use
+in test method
 
 this is so that we don't have to create the last_block
 and block variables again and again for the block validation 
 (test_is_valid_block) tests down below
+remember to import pytest at the top of the file
 """
 @pytest.fixture
 def last_block():

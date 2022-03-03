@@ -1,6 +1,7 @@
 ## CHAIN VALIDATION & REPLACEMENT: TABLE OF CONTENT:
 
 1. 15th Commit: Validating Blocks
+2. 16th Commit: Validating Chain
 
 ---
 
@@ -28,5 +29,15 @@
    - See code:
      +, ./backend/blockchain/block.py > method: is_valid_block()
      +, ./backend/tests/blockchain/block.py
+
+   - See how to raise exceptions and catch it with try and except
+
+2. 16th Commit: Validating Chain
+
+   - Method to validate the whole chain
+
+   - See code:
+     +, ./backend/blockchain/blockchain.py > method: is_valid_chain()
+     +, ./backend/tests/blockchain/blockchain.py
 
    - See how to raise exceptions and catch it with try and except

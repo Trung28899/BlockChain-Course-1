@@ -17,6 +17,32 @@ class Blockchain:
     def __repr__(self): 
         return f"Blockchain: {self.chain}"
 
+    """
+        Validate the incoming chain
+        Enforce the following rules of the blockchain
+            - The chain must start with the genesis block
+            - blocks must be formatted correctly
+        
+        => the idea is to validate every single the blocks
+    """
+    @staticmethod
+    def is_valid_chain(chain): 
+        """
+            This if statement works because of the __eq__
+            method in block.py
+
+            it shouldn't work because these 2 are different
+            instances of a Block so the != or == won't work
+        """
+        if chain[0] != Block.genesis(): 
+            raise Exception('The genesis block must be valid')
+
+        for i in range(1, len(chain)):
+            block = chain[i]
+            last_block = chain[i - 1]
+            Block.is_valid_block(last_block, block)
+
+
 def main(): 
     blockchain = Blockchain()
     blockchain.add_block("one")
