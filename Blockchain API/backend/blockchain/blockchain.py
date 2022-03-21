@@ -42,6 +42,26 @@ class Blockchain:
             last_block = chain[i - 1]
             Block.is_valid_block(last_block, block)
     
+    def to_json(self):
+        # serialized_chain = []
+
+        # for block in self.chain:
+        #     serialized_chain.append(block.to_json())
+
+        # return serialized_chain
+        """
+            Serialized the blockchain into a list
+            of blocks
+
+            lambda function like the arrow function in JS: 
+            (data) => {}
+
+            syntax down below in JS would be: 
+            self.chain.map(block => block.to_json())
+        """
+
+        return list(map(lambda block: block.to_json(), self.chain))
+    
     def replace_chain(self, chain): 
         """
             Replace the local chain with the incoming one if the following applies: 
