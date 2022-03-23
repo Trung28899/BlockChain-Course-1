@@ -23,6 +23,8 @@
 
 `$ source blockchain-env/bin/activate`
 
+> go to testing environment
+
 `$ cd "Blockchain API"`
 
 `$ pip3 freeze`
@@ -76,7 +78,7 @@
 
 ---
 
-3. 20th Commit: Setup PubNub (Video 55):
+3. 20th Commit: Setup PubNub (Video 55 - 56):
 
    - See how pubnub is setup in /backend/pubsub.py
 
@@ -86,3 +88,28 @@
    - COMMANDS:
      `$ pip3 install pubnub`
      `$ python3 -m backend.pubsub`
+     `$ python3 -m backend.app`
+
+---
+
+4. 21st Commit: Setup Peer Instances (video 57):
+
+   - Setting up peer instances so that we have multiple nodes in the network
+
+   - See code in:
+     +, backend/app/init.py > see how the port is setup
+     +, backend/pubsub.py
+
+   - Open 3 different terminals:
+
+     +, 1st terminal, run: `$ python3 -m backend.app`
+
+     +, 2nd terminal, run: `$ export PEER=True && python3 -m backend.app`
+
+     > This is how to run a peer instance
+
+     +, 3rd terminl, run: `$ python3 -m backend.pubsub`
+
+     => Then see how to print is broadcast in the 3 different terminals
+
+   - OTHER COMMAND: `$ cd "Blockchain API"`
