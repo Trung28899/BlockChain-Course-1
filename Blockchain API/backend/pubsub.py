@@ -1,3 +1,4 @@
+from tarfile import BLOCKSIZE
 import time
 from pubnub.pubnub import PubNub
 from pubnub.pnconfiguration import PNConfiguration
@@ -8,7 +9,10 @@ pnconfig.subscribe_key = 'sub-c-660a6c3e-a9f2-11ec-a8cf-c6bc4dd2ac2a'
 pnconfig.publish_key = 'pub-c-815d2a7a-942b-4a1a-a804-bfe1862f6b01'
 # For pubnub==6.1.0 and above, will need to set up pnconfig.uuid
 
-TEST_CHANNEL = "TEST_CHANNEL"
+CHANNELS = {
+    "TEST": "TEST", 
+    "BLOCK": 'BLOCK'
+}
 
 class Listener(SubscribeCallback):
     def message(self, pubnub, message_object):
@@ -23,7 +27,7 @@ class PubSub():
     def __init__(self):
         self.pubnub = PubNub(pnconfig)
         # Subscribing to a channel
-        self.pubnub.subscribe().channels([TEST_CHANNEL]).execute()
+        self.pubnub.subscribe().channels(CHANNELS.values()).execute()
         self.pubnub.add_listener(Listener())
     
     """
@@ -31,14 +35,20 @@ class PubSub():
     """
     def publish(self, channel, message): 
         self.pubnub.publish().channel(channel).message(message).sync()
-
-
+    
+    """
+        Broadcast a block object to all nodes
+    """
+    def broadcast_block(self, block):
+        # .to_json() is a method in the class Block, 
+        # see file /backend/blockchain/block.py to see it
+        self.publish(CHANNELS['BLOCK'], block.to_json())
 
 def main():
     pubsub = PubSub()
     time.sleep(1)
 
-    pubsub.publish(TEST_CHANNEL, {'foo': 'bar'})
+    pubsub.publish(CHANNELS['TEST'], {'foo': 'bar'})
 
 if __name__ == "__main__": 
     main()

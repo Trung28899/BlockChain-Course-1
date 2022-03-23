@@ -113,3 +113,25 @@
      => Then see how to print is broadcast in the 3 different terminals
 
    - OTHER COMMAND: `$ cd "Blockchain API"`
+
+---
+
+5. 22nd Commit: Broadcast to all peers when a new block is added (Video 58)
+
+   - See how a peer broadcast a message to add a new block to all peers in network
+
+   - See Code:
+     +, backend/pubsub.py > look for broadcast_block()
+     +, backend/app/init.py > see route_blockchain_mine()
+
+   - In order to see how it works, open 3 different temrinals, cd to the correct folder:
+     +, 1st terminal, run: `$ python3 -m backend.app`
+
+     +, 2nd terminal, run a peer instance: `$ export PEER=True && python3 -m backend.app`
+
+     +, 3rd terminal, run a peer instance: `$ export PEER=True && python3 -m backend.app`
+
+     +, Go to browser, go to http://127.0.0.1:5000/blockchain/mine
+
+     => This will mine a new block and broadcast it for the peer of the 1st terminal
+     => See the output for all terminals to see how a new block is broadcast
