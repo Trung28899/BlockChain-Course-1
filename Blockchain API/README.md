@@ -80,6 +80,9 @@
 
    - See how pubnub is setup in /backend/pubsub.py
 
+   - 20th Commit Part 2 is a more organized code in the same file.
+     Code is organized into a PubSub class
+
    - COMMANDS:
      `$ pip3 install pubnub`
      `$ python3 -m backend.pubsub`
