@@ -9,14 +9,19 @@
 - Building blockchain API with routes to receive
   (much like routes in Express.js)
 
+- Python is also a non-blocking language. Meaning when there is an asychronous
+  task running, the code will continue to be execute synchronously to the next line and
+  doesn't block the execution to wait for the async task to be completed
+
+- PubNub:
+  https://www.pubnub.com/
+  > account: google email (trung28899@gmail.com)
+
 ---
 
 ## COMMANDS:
 
-`$ cd Collaboration`
-`$ python3 -m backend.blockchain.block`
-`$ python3 -m pytest backend/tests`
-`$ python3 -m backend.scripts.average_block_rate`
+`$ source blockchain-env/bin/activate`
 
 `$ cd "Blockchain API"`
 
@@ -27,6 +32,8 @@
 `$ pip3 install flask`
 
 `$ python3 -m backend.app`
+
+`$ python3 -m backend.pubsub`
 
 ---
 
@@ -56,6 +63,9 @@
       +, Go to localhost:5000/blockchain/mine to mine a new block then go back to
       the /blockchain route to see the result
 
+      +, Right now the blockchain system is not able for multiple nodes to collaborate
+      +, Next commit will implement that
+
     - NOTES for code:
       +, Needed to convert data to JSON format for the HTTP request so have to format the data
       correctly:
@@ -63,3 +73,13 @@
       > See file: block.py and blockchain.py, method: to_json()
 
       > See file /server/app/init.py: jsonify()
+
+---
+
+3. 20th Commit: Setup PubNub (Video 55):
+
+   - See how pubnub is setup in /backend/pubsub.py
+
+   - COMMANDS:
+     `$ pip3 install pubnub`
+     `$ python3 -m backend.pubsub`
