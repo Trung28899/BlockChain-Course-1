@@ -124,7 +124,7 @@
      +, backend/pubsub.py > look for broadcast_block()
      +, backend/app/init.py > see route_blockchain_mine()
 
-   - In order to see how it works, open 3 different temrinals, cd to the correct folder:
+   - In order to see how it works, open 3 different temrinals, cd to the correct folder. STEPS TO TEST OUTPUT:
      +, 1st terminal, run: `$ python3 -m backend.app`
 
      +, 2nd terminal, run a peer instance: `$ export PEER=True && python3 -m backend.app`
@@ -135,3 +135,53 @@
 
      => This will mine a new block and broadcast it for the peer of the 1st terminal
      => See the output for all terminals to see how a new block is broadcast
+
+   - OTHER COMMAND: `$ cd "Blockchain API"`
+
+---
+
+6. 23rd Commit: Add a block locally after receiving a broadcast message (Vid 59)
+
+   - After a peer received a broadcasted messsage to add a block, it will
+     need to add the block locally. We will implement the code in this commit
+
+   - See Code:
+
+     +, backend/pubsub.py > look for class Listener and message()
+     to see how message to add block is being handled
+
+     +, backend/app/init.py
+
+     > see route_blockchain_mine()
+
+     > see pubsub = PubSub(blockchain)
+
+     +, backend/blockchain/block.py: see method from_json()
+
+   - Perform the exact steps for the 22nd Commit (STEPS TO TEST OUTPUT):
+
+     +, Will see the peers will have the block successfully added
+
+     +, The primary node will have an error of did not replace chain
+
+   => This is because the primary node already have the updated chain locally
+   => It published to add a new block but it also subscribe to this channel
+   => Will try to add new block like other peers but the block was already there, so it will be rejected
+
+   - A new problem:
+
+     +, After adding the 1st block, a new peer join the network won't
+     have the updated version. It will only have the chain with the
+     genesis block (see backend/app/init.py)
+
+     +, Therefore, when we add another block, the new peer won't
+     be able to add that block. To see this issue:
+
+     > open a 4th terminal, run the same command: `$ export PEER=True && python3 -m backend.app`
+
+     > hit the route to mine a new block: http://127.0.0.1:5000/blockchain/mine
+
+     > the other 2 peers will be able to add this new block. The 4th peer won't be able to
+
+   => We will need to synchronize when a new peer join the network
+   => Will do it in next commit
