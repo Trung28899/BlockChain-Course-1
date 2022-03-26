@@ -62,6 +62,23 @@ class Blockchain:
 
         return list(map(lambda block: block.to_json(), self.chain))
     
+    @staticmethod
+    def from_json(chain_json):
+        """
+            Convert an object into a Blockchain instance (Blockchain Object)
+            The result will contain a chain list of Block instances
+        """
+        blockchain = Blockchain()
+
+        """
+            Equivalent of 
+            blockchain.chain = chain_json.map(block_json => Block.from_json(block_json))
+            in JavaScript
+        """
+        blockchain.chain = list(map(lambda block_json: Block.from_json(block_json), chain_json))
+        return blockchain
+
+    
     def replace_chain(self, chain): 
         """
             Replace the local chain with the incoming one if the following applies: 

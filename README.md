@@ -72,3 +72,13 @@ I. Course 1: Python, JS, & React | Build a Blockchain & Cryptocurrency
         +, How to replace the whole Blockchain
 
         => Preparing the system for Collaboration
+
+    - Section 7: Blockchain API:
+        +, 18th Commit - 24th Commit
+        +, How to set up Pub / Sub Network
+        +, How to broadcast to block channel to add a new block
+        +, Add block after an add block message is received
+        +, Synchronize a peer with the current chain when peer first start up
+
+        => Implement the whole API for collaboration between peers in the
+        network

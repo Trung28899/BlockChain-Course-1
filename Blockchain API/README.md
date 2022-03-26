@@ -1,6 +1,13 @@
 ## BLOCKCHAIN API: TABLE OF CONTENT:
 
 1. 18th Commit: Setup the Flask API (Video 50)
+2. 19th Commit: Setup the get blockchain route and the mine block route
+   (Video 51 - 53)
+3. 20th Commit: Setup PubNub (Video 55 - 56)
+4. 21st Commit: Setup Peer Instances (video 57):
+5. 22nd Commit: Broadcast to all peers when a new block is added (Video 58)
+6. 23rd Commit: Add a block locally after receiving a broadcast message (Vid 59)
+7. 24th Commit: Synchronize a peer on start up (Vid 60)
 
 ---
 
@@ -185,3 +192,46 @@
 
    => We will need to synchronize when a new peer join the network
    => Will do it in next commit
+
+   - OTHER COMMAND: `$ cd "Blockchain API"`
+
+---
+
+7.  24th Commit: Synchronize a peer on start up (Vid 60)
+
+    - See the problem notes above. In this commit, we are goin to synchronize the network blockchain
+      for a peer when it first start up
+
+    - See Code:
+
+      +, backend/app/init.py
+
+    > see code under: if os.environ.get('PEER') == "True":
+    > to see how to synchronize the blockchain when a peer first start up
+
+    - Commands:
+      `$ pip3 install request==2.22.0`
+      `$ python3 -m backend.app`
+      `$ export PEER=True && python3 -m backend.app`
+
+    - STEPS TO TEST OUTPUT:
+
+           +, Run primary node:
+           `$ python3 -m backend.app`
+
+           +, Run peer node:
+           `$ export PEER=True && python3 -m backend.app`
+
+            > Will get the error down below:
+
+      -- Error Synchronizing: Cannot replace. The incoming chain must be longer
+
+      => This is because the replace_chain() method require a longer chain than
+      the local chain in order to replace
+
+      Mine a new block: go to a browser and visit: http://127.0.0.1:5000/blockchain/mine
+
+          +, Start up the peer node again:
+          `$ export PEER=True && python3 -m backend.app`
+
+      => Peer node now will sync to the network chain
